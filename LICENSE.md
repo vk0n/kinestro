@@ -11,13 +11,13 @@ Kinestro — Wearable Spatial Input System is an open-source hardware and softwa
 
 | Material | Approved license | Application |
 | --- | --- | --- |
-| Software and firmware authored for Kinestro | [Mozilla Public License 2.0](LICENSES/MPL-2.0.txt) (`MPL-2.0`) | Apply explicitly to original software/firmware files when they are added. |
+| Software and firmware authored for Kinestro | [Mozilla Public License 2.0](LICENSES/MPL-2.0.txt) (`MPL-2.0`) | Covers the current isolated E1 Python research code/tests and associated dependency/ignore files; apply explicitly to future original software/firmware files when added. |
 | Original open hardware design source files | [CERN Open Hardware Licence Version 2 — Weakly Reciprocal](LICENSES/CERN-OHL-W-2.0.txt) (`CERN-OHL-W-2.0`) | Apply explicitly to original hardware design sources when they are added. |
 | Project-authored documentation | [Creative Commons Attribution 4.0 International](LICENSES/CC-BY-4.0.txt) (`CC-BY-4.0`) | Applies to the current documentation through each file's SPDX header. |
 
-The current repository contains documentation only. The approved policy guides future contributions; storing a license text does not license files that do not yet exist. It also does not make every file available under all three licenses. Future source files must receive their own appropriate licensing information when created.
+The current repository contains documentation and isolated numerical Python research, with explicit file-level licensing. It contains no production application, firmware, drivers, or hardware design sources. The approved policy guides future contributions; storing a license text does not license files that do not yet exist. It also does not make every file available under all three licenses. Future source files must receive their own appropriate licensing information when created.
 
-Current project-authored Markdown files, including `README.md`, `AGENTS.md`, this overview, and all files under `docs/` (including ADRs), are licensed under `CC-BY-4.0`. Source snippets or external materials added later require their own appropriate treatment; file extensions alone do not determine their license.
+Current project-authored Markdown files, including `README.md`, `AGENTS.md`, this overview, and documentation under `docs/` and `research/`, are licensed under `CC-BY-4.0`. Original derived synthetic E1 CSV/JSON/SVG report artifacts are narrowly assigned CC-BY-4.0 through the research directory's `REUSE.toml`; this does not assign licensing to external or participant datasets. Source snippets or external materials added later require their own appropriate treatment; file extensions alone do not determine their license.
 
 ## Permissions and obligations
 
@@ -54,6 +54,6 @@ The complete, unmodified plain-text licenses are copied from the SPDX License Li
 
 License texts carry no added Kinestro headers. Per-file documentation headers make the current assignments explicit without a global override that could accidentally cover external material.
 
-At the owner's request, the MPL-2.0 and CERN-OHL-W-2.0 texts are included ahead of software and hardware sources. They currently have no covered source files. [REUSE Specification 3.3](https://reuse.software/spec-3.3/#license-files) disallows unused license texts; this deliberate policy exception prevents claiming full REUSE compliance at the documentation-only stage. Report `reuse lint` results honestly. Do not label documentation with unrelated licenses or create placeholder source files merely to silence an unused-license finding. Recheck when real software and hardware files are introduced.
+At the owner's request, license texts were included ahead of software and hardware sources. MPL-2.0 now covers the E1 research code; CERN-OHL-W-2.0 still has no covered hardware source files. [REUSE Specification 3.3](https://reuse.software/spec-3.3/#license-files) disallows unused license texts; this deliberate remaining policy exception prevents claiming full REUSE compliance. Report `reuse lint` results honestly. Do not label documentation with unrelated licenses or create placeholder source files merely to silence an unused-license finding. Recheck when real hardware files are introduced. The original documentation-only context remains historical in ADR-0006.
 
 See [ADR-0006](docs/adr/0006-open-source-licensing.md) for the decision and its relationship to the historical licensing deferral.

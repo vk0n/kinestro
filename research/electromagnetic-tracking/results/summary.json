@@ -1,0 +1,1194 @@
+{
+  "classification": "SYNTHETIC SIMULATION ONLY; no physical measurements",
+  "seed": 20261115,
+  "trials_per_point_per_noise": 6,
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "source_sha256": {
+    "__init__.py": "5d89ca857e2d99d1ab67528598c155904e53390fc37cd5b048f43243c6dc9d21",
+    "estimation.py": "3b7e04bb6c322ec05afcb230bb46bf41d30bcb4f68762809e50b54bd430ed37c",
+    "geometry.py": "9e14e3e0c9edfdc341e6806bdaf55cbb4740ed8419ed814bfbd2fc77a47b6f4b",
+    "model.py": "883919b45624fd9d76ea43741fbbdce9b70edb0d261960c105a2ac562397cca6",
+    "run.py": "c6067a05f9e59a80cd35b7a3b07456c1e36a6a19f64fe403783e73f5f5bd6a57"
+  },
+  "config": {
+    "moment_rms_a_m2": 0.0502654824574367,
+    "tx_radius_m": 0.04,
+    "noise_levels_nt_rms_per_entry": [
+      0,
+      0.1,
+      1,
+      10,
+      100
+    ],
+    "source_model": "free-space point dipole; inverse always point dipole",
+    "hemisphere_prior": "positive reference-frame y; not a runtime-validated constraint",
+    "numerical_box_m": [
+      -2,
+      2
+    ],
+    "solver_max_nfev": 180,
+    "jacobian_scaling": "1 m translations; 1 rad local rotations",
+    "noise_model": "independent zero-mean Gaussian post-demod field-equivalent entries",
+    "model_mismatch_noise_nt": 0,
+    "mismatch_repetitions_per_point": 1,
+    "combined_scenario": "finite radius .04m + common gain +5% + RX gains [1.03,.97,1] + 1nT noise"
+  },
+  "workspace_points": 72,
+  "monte_carlo_fit_count": 4320,
+  "workspace": {
+    "waist": {
+      "min_distance_m": 0.18930365257564608,
+      "max_distance_m": 0.9543770850782796,
+      "min_scale_nt": 5.782422831508425
+    },
+    "chest": {
+      "min_distance_m": 0.11490550068118233,
+      "max_distance_m": 0.7846885310087196,
+      "min_scale_nt": 10.403463320091543
+    }
+  },
+  "scenarios": {
+    "combined_finite_gain_1nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 0.017326735030005706,
+        "p95_m": 0.12587765965679493,
+        "worst_m": 1.9426160625396098,
+        "orientation_median_deg": 5.867639510090713,
+        "orientation_p95_deg": 17.691196232470976,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.8356481481481481,
+        "antipodal_lobe_fraction": 0.020833333333333332,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 105.9059253982872
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 0.019825414123939837,
+        "p95_m": 0.15130268897564922,
+        "worst_m": 1.9426160625396098,
+        "orientation_median_deg": 6.419726944053169,
+        "orientation_p95_deg": 18.195286923060895,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.75,
+        "antipodal_lobe_fraction": 0.018518518518518517,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 13.830519409782198
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 0.015324565776374682,
+        "p95_m": 0.06370686125390727,
+        "worst_m": 1.5587416903042095,
+        "orientation_median_deg": 4.7501050283214035,
+        "orientation_p95_deg": 15.931503520155182,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.9212962962962963,
+        "antipodal_lobe_fraction": 0.023148148148148147,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 234.22026047400047
+      }
+    },
+    "finite_radius_0.02m": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.0012665638418190898,
+        "p95_m": 0.004156093065070076,
+        "worst_m": 0.005260526192838215,
+        "orientation_median_deg": 0.3201075662470254,
+        "orientation_p95_deg": 2.720033657552677,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 23.688629703195282
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.0010894740922462202,
+        "p95_m": 0.0032841027747194354,
+        "worst_m": 0.0037160765016635558,
+        "orientation_median_deg": 0.27524675974101553,
+        "orientation_p95_deg": 1.685957779268796,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 2.7235872987519625
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.001282029246487044,
+        "p95_m": 0.004672176222480846,
+        "worst_m": 0.005260526192838215,
+        "orientation_median_deg": 0.3201075662470254,
+        "orientation_p95_deg": 3.436565661055181,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 38.23337343411451
+      }
+    },
+    "finite_radius_0.04m": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.005034666943979475,
+        "p95_m": 0.016628928393221106,
+        "worst_m": 0.02055080287160747,
+        "orientation_median_deg": 1.2674537789173832,
+        "orientation_p95_deg": 10.605977579304742,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 101.17652230214274
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.004317675239077812,
+        "p95_m": 0.013795500060929833,
+        "worst_m": 0.01578353315240884,
+        "orientation_median_deg": 1.0864430604177964,
+        "orientation_p95_deg": 7.04128731779103,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 10.405127300848443
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.00507522394431721,
+        "p95_m": 0.018384342639651826,
+        "worst_m": 0.02055080287160747,
+        "orientation_median_deg": 1.2674537789173832,
+        "orientation_p95_deg": 13.271548491960557,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 159.99608179373976
+      }
+    },
+    "finite_radius_0.08m": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.019098289122457448,
+        "p95_m": 0.06743795826915987,
+        "worst_m": 0.07231643543882563,
+        "orientation_median_deg": 4.872334433735274,
+        "orientation_p95_deg": 40.62171450931132,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.8333333333333334,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 4.0,
+        "p95_residual_nt": 481.0290737899789
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.016669275661386054,
+        "p95_m": 0.0627342538694051,
+        "worst_m": 0.0718804710785523,
+        "orientation_median_deg": 4.126863665549431,
+        "orientation_p95_deg": 31.41595851101576,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.8333333333333334,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 4.0,
+        "p95_residual_nt": 34.38316408532848
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.019535391836399928,
+        "p95_m": 0.06593149016998892,
+        "worst_m": 0.07231643543882563,
+        "orientation_median_deg": 4.872334433735274,
+        "orientation_p95_deg": 44.37696270232214,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.8333333333333334,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 4.0,
+        "p95_residual_nt": 686.5679639797386
+      }
+    },
+    "gain_10pct": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.01312160015353208,
+        "p95_m": 0.02624291546193654,
+        "worst_m": 0.029844033643541,
+        "orientation_median_deg": 2.5630334507582872e-14,
+        "orientation_p95_deg": 6.574010116738068e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 1.0167660770446924e-12
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.015134089571170281,
+        "p95_m": 0.027408252087110944,
+        "worst_m": 0.029844033643541,
+        "orientation_median_deg": 2.468261386069336e-14,
+        "orientation_p95_deg": 6.530656675131779e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 1.5,
+        "p95_residual_nt": 2.0237143286019998e-13
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.01312160015353208,
+        "p95_m": 0.02213732228292797,
+        "worst_m": 0.024537754819631014,
+        "orientation_median_deg": 2.6919554670728927e-14,
+        "orientation_p95_deg": 6.516438523207082e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 1.1733083275532279e-12
+      }
+    },
+    "gain_1pct": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.0013894583045771318,
+        "p95_m": 0.0027788864466418758,
+        "worst_m": 0.0031602121618480574,
+        "orientation_median_deg": 3.005063887889213e-14,
+        "orientation_p95_deg": 6.824807710768999e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 6.570636736606373e-13
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.0016025626593426947,
+        "p95_m": 0.0029022850133204347,
+        "worst_m": 0.0031602121618480574,
+        "orientation_median_deg": 3.2125345316850056e-14,
+        "orientation_p95_deg": 7.782589342804846e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 1.5,
+        "p95_residual_nt": 1.4968735620199044e-13
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.0013894583045771318,
+        "p95_m": 0.002344141410133954,
+        "worst_m": 0.002598325418461637,
+        "orientation_median_deg": 2.915681424008905e-14,
+        "orientation_p95_deg": 5.331225790321877e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 7.457126146482267e-13
+      }
+    },
+    "gain_5pct": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.006769140728691387,
+        "p95_m": 0.01353813451213733,
+        "worst_m": 0.015395871028012525,
+        "orientation_median_deg": 2.939232776590323e-14,
+        "orientation_p95_deg": 5.539380085264495e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 6.717023228773435e-13
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.007807339113309007,
+        "p95_m": 0.014139305674176126,
+        "worst_m": 0.015395871028012525,
+        "orientation_median_deg": 3.197392576123701e-14,
+        "orientation_p95_deg": 6.147256999999583e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 1.5,
+        "p95_residual_nt": 1.804956329521986e-13
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.006769140728691387,
+        "p95_m": 0.011420150601769286,
+        "worst_m": 0.012658480185093685,
+        "orientation_median_deg": 2.205339614372506e-14,
+        "orientation_p95_deg": 5.4026724641948494e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 7.859116495538673e-13
+      }
+    },
+    "moment_0.5x_1nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 0.009797276685161789,
+        "p95_m": 0.5710948279704454,
+        "worst_m": 1.9494078020939831,
+        "orientation_median_deg": 2.6418128130414438,
+        "orientation_p95_deg": 35.144550029520566,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.7037037037037037,
+        "antipodal_lobe_fraction": 0.046296296296296294,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.936850819277267
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 0.011100735368274172,
+        "p95_m": 1.404561086096525,
+        "worst_m": 1.9494078020939831,
+        "orientation_median_deg": 2.707060871845859,
+        "orientation_p95_deg": 49.28677998676525,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.5787037037037037,
+        "antipodal_lobe_fraction": 0.05555555555555555,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 4.0,
+        "p95_residual_nt": 0.9428509615368018
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 0.009533291069414671,
+        "p95_m": 0.16754153484916173,
+        "worst_m": 1.583909169239813,
+        "orientation_median_deg": 2.640516298682477,
+        "orientation_p95_deg": 17.12256718992839,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.8287037037037037,
+        "antipodal_lobe_fraction": 0.037037037037037035,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.9293208860214499
+      }
+    },
+    "moment_2x_1nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 0.0019984670665611297,
+        "p95_m": 0.05984656583037518,
+        "worst_m": 1.8919375554997588,
+        "orientation_median_deg": 0.6595385122339168,
+        "orientation_p95_deg": 7.810292229340744,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.9236111111111112,
+        "antipodal_lobe_fraction": 0.004629629629629629,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.8941628732356635
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 0.0027853789423225766,
+        "p95_m": 0.07363278933672096,
+        "worst_m": 1.8919375554997588,
+        "orientation_median_deg": 0.7055243234109656,
+        "orientation_p95_deg": 9.848242046994962,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.8564814814814815,
+        "antipodal_lobe_fraction": 0.004629629629629629,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.9334576397185683
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 0.0019107943678893795,
+        "p95_m": 0.024538686574006815,
+        "worst_m": 1.5602722984337258,
+        "orientation_median_deg": 0.6568870651634053,
+        "orientation_p95_deg": 3.861324411644288,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.9907407407407407,
+        "antipodal_lobe_fraction": 0.004629629629629629,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.8493233495063784
+      }
+    },
+    "noise_0.1nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 0.00044496299995846166,
+        "p95_m": 0.011769112347371647,
+        "worst_m": 0.027952712250140756,
+        "orientation_median_deg": 0.1311728429111282,
+        "orientation_p95_deg": 1.6683505558231566,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.09421597926986675
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 0.00045030211569747534,
+        "p95_m": 0.01593920614436093,
+        "worst_m": 0.027952712250140756,
+        "orientation_median_deg": 0.13144419751536662,
+        "orientation_p95_deg": 1.8817308897813527,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.09499218443651498
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 0.00044496299995846166,
+        "p95_m": 0.005442108540695818,
+        "worst_m": 0.012869008934454581,
+        "orientation_median_deg": 0.1311728429111282,
+        "orientation_p95_deg": 0.89519150409222,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.09074902614595116
+      }
+    },
+    "noise_0nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 8.777083671441753e-17,
+        "p95_m": 3.521787733787174e-16,
+        "worst_m": 6.036438896220727e-16,
+        "orientation_median_deg": 2.9449119039023767e-14,
+        "orientation_p95_deg": 6.956364638874866e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 7.118566142406453e-13
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 1.1123893155135927e-16,
+        "p95_m": 3.903068296797315e-16,
+        "worst_m": 5.688200336284365e-16,
+        "orientation_median_deg": 3.006808360302425e-14,
+        "orientation_p95_deg": 7.199546973504135e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 1.5,
+        "p95_residual_nt": 1.558553600434815e-13
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 7.850462293418876e-17,
+        "p95_m": 2.1852663273382388e-16,
+        "worst_m": 6.036438896220727e-16,
+        "orientation_median_deg": 2.891949339323277e-14,
+        "orientation_p95_deg": 6.830057604925658e-14,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 8.710905598929675e-13
+      }
+    },
+    "noise_100nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 0.35318639405354324,
+        "p95_m": 1.027992396155656,
+        "worst_m": 1.367653077832233,
+        "orientation_median_deg": 83.70033112278296,
+        "orientation_p95_deg": 172.16324149435837,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.24074074074074073,
+        "antipodal_lobe_fraction": 0.20601851851851852,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 11.0,
+        "p95_residual_nt": 82.68501078889855
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 0.3967767021003927,
+        "p95_m": 1.0881414052419476,
+        "worst_m": 1.367653077832233,
+        "orientation_median_deg": 84.40624839002152,
+        "orientation_p95_deg": 174.32875882271392,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.14351851851851852,
+        "antipodal_lobe_fraction": 0.2175925925925926,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 11.0,
+        "p95_residual_nt": 79.98029739655728
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 0.31552849307676223,
+        "p95_m": 0.8626946748669524,
+        "worst_m": 1.1282936441576707,
+        "orientation_median_deg": 83.68136161456663,
+        "orientation_p95_deg": 168.5318586779121,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.33796296296296297,
+        "antipodal_lobe_fraction": 0.19444444444444445,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 10.0,
+        "p95_residual_nt": 84.17336423504423
+      }
+    },
+    "noise_10nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 0.050141377248368556,
+        "p95_m": 1.272359765558909,
+        "worst_m": 1.602870567415109,
+        "orientation_median_deg": 13.249530521385818,
+        "orientation_p95_deg": 146.3730904652671,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.5,
+        "antipodal_lobe_fraction": 0.12037037037037036,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 4.0,
+        "p95_residual_nt": 9.252401651063874
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 0.0513262764697161,
+        "p95_m": 1.3764938988511068,
+        "worst_m": 1.602870567415109,
+        "orientation_median_deg": 17.22756529149912,
+        "orientation_p95_deg": 157.35701660233184,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.49074074074074076,
+        "antipodal_lobe_fraction": 0.12962962962962962,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 4.0,
+        "p95_residual_nt": 8.84669405477528
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 0.04621631133779679,
+        "p95_m": 1.1104962912844338,
+        "worst_m": 1.557541888152846,
+        "orientation_median_deg": 12.098301586692576,
+        "orientation_p95_deg": 102.59493106026747,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.5092592592592593,
+        "antipodal_lobe_fraction": 0.1111111111111111,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 4.0,
+        "p95_residual_nt": 9.660878505175832
+      }
+    },
+    "noise_1nt": {
+      "all": {
+        "attempts": 432,
+        "median_m": 0.004567744466932868,
+        "p95_m": 0.10205920254200616,
+        "worst_m": 1.9170479197804529,
+        "orientation_median_deg": 1.5318295070993826,
+        "orientation_p95_deg": 14.639809659697152,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.8263888888888888,
+        "antipodal_lobe_fraction": 0.011574074074074073,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.91709592878307
+      },
+      "waist": {
+        "attempts": 216,
+        "median_m": 0.006204963949735947,
+        "p95_m": 0.11476398807922637,
+        "worst_m": 1.9170479197804529,
+        "orientation_median_deg": 1.6926807880524024,
+        "orientation_p95_deg": 16.17148041393568,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.7222222222222222,
+        "antipodal_lobe_fraction": 0.009259259259259259,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.9164476028667904
+      },
+      "chest": {
+        "attempts": 216,
+        "median_m": 0.004405227100238039,
+        "p95_m": 0.053247963154933284,
+        "worst_m": 1.5710363096601168,
+        "orientation_median_deg": 1.4968616934627734,
+        "orientation_p95_deg": 10.750438181205535,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 0.9305555555555556,
+        "antipodal_lobe_fraction": 0.013888888888888888,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 0.918713637214613
+      }
+    },
+    "rx_gain_3pct": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.007932173788118418,
+        "p95_m": 0.01828410074170669,
+        "worst_m": 0.023065828260735704,
+        "orientation_median_deg": 2.754654388089877,
+        "orientation_p95_deg": 4.7158576564785815,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 27.026881144377246
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.012352038369550018,
+        "p95_m": 0.020212260108853176,
+        "worst_m": 0.023065828260735704,
+        "orientation_median_deg": 2.9054436631224343,
+        "orientation_p95_deg": 4.638775733242124,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 8.232991538053104
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.006912365046157098,
+        "p95_m": 0.014965046728150692,
+        "worst_m": 0.01755167412957761,
+        "orientation_median_deg": 2.668087102810138,
+        "orientation_p95_deg": 4.718298381337687,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 32.80380686772382
+      }
+    },
+    "rx_nonorthogonal_2deg": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.004803726934923273,
+        "p95_m": 0.01118969743539296,
+        "worst_m": 0.012958170002460188,
+        "orientation_median_deg": 1.7664797891834887,
+        "orientation_p95_deg": 3.418979113695606,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 14.533000826145873
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.006891592708838809,
+        "p95_m": 0.012085861587908593,
+        "worst_m": 0.012958170002460188,
+        "orientation_median_deg": 1.8671861779595194,
+        "orientation_p95_deg": 3.6765214770719803,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 4.249660076133418
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.004062527191775392,
+        "p95_m": 0.008195367334715025,
+        "worst_m": 0.0099564229395899,
+        "orientation_median_deg": 1.6108946896385314,
+        "orientation_p95_deg": 2.8962353215465164,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 21.06459284188503
+      }
+    },
+    "rx_rigid_2deg": {
+      "all": {
+        "attempts": 72,
+        "median_m": 9.003143051563731e-17,
+        "p95_m": 3.2041332574967336e-16,
+        "worst_m": 3.925231146709438e-16,
+        "orientation_median_deg": 2.0000000000000027,
+        "orientation_p95_deg": 2.0000000000000324,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 6.389911223448917e-13
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 1.141016798782053e-16,
+        "p95_m": 3.604570247979538e-16,
+        "worst_m": 3.925231146709438e-16,
+        "orientation_median_deg": 2.0000000000000036,
+        "orientation_p95_deg": 2.0000000000000333,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 1.5,
+        "p95_residual_nt": 1.6205281326428112e-13
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 7.850462293418876e-17,
+        "p95_m": 1.543445389020242e-16,
+        "worst_m": 2.7194799110210365e-16,
+        "orientation_median_deg": 2.0000000000000027,
+        "orientation_p95_deg": 2.00000000000003,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 2.0,
+        "p95_residual_nt": 8.048051255905396e-13
+      }
+    },
+    "sequential_10ms_1mps": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.010093808020574892,
+        "p95_m": 0.017152577680117072,
+        "worst_m": 0.017207740752908127,
+        "orientation_median_deg": 2.3050589853477543,
+        "orientation_p95_deg": 11.711099243891635,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 40.09648612534606
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.007984600813441411,
+        "p95_m": 0.014420759473291325,
+        "worst_m": 0.014450585490360962,
+        "orientation_median_deg": 1.9680021500487366,
+        "orientation_p95_deg": 3.0377875747562664,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 9.310550462205253
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.013968240915265703,
+        "p95_m": 0.01718182653597007,
+        "worst_m": 0.017207740752908127,
+        "orientation_median_deg": 2.9670304841800124,
+        "orientation_p95_deg": 13.204363488746512,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 55.61238106090899
+      }
+    },
+    "tx_axis_2deg": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.00732258101440818,
+        "p95_m": 0.022208867339109664,
+        "worst_m": 0.026127904572469978,
+        "orientation_median_deg": 1.9465528052101,
+        "orientation_p95_deg": 3.3540207138348133,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 13.774346088429446
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.007935902783714827,
+        "p95_m": 0.023304774266542212,
+        "worst_m": 0.026127904572469978,
+        "orientation_median_deg": 1.8989093053690493,
+        "orientation_p95_deg": 2.763962620969034,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 3.266020046470185
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.006696026188177457,
+        "p95_m": 0.02044991371966006,
+        "worst_m": 0.02309252729573811,
+        "orientation_median_deg": 2.016309032598109,
+        "orientation_p95_deg": 3.4957127919903197,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 19.171980163024543
+      }
+    },
+    "tx_offset_5mm": {
+      "all": {
+        "attempts": 72,
+        "median_m": 0.007260480933694866,
+        "p95_m": 0.009439034307911657,
+        "worst_m": 0.009825983924409013,
+        "orientation_median_deg": 1.3436189100857963,
+        "orientation_p95_deg": 4.747532162591028,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 44.04568306117706
+      },
+      "waist": {
+        "attempts": 36,
+        "median_m": 0.008261936471063727,
+        "p95_m": 0.009784478913470753,
+        "worst_m": 0.009825983924409013,
+        "orientation_median_deg": 1.7374364090244878,
+        "orientation_p95_deg": 4.53776797710168,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 10.576107132773785
+      },
+      "chest": {
+        "attempts": 36,
+        "median_m": 0.004683737589524837,
+        "p95_m": 0.009118886270173909,
+        "worst_m": 0.009280024169339568,
+        "orientation_median_deg": 1.2550728589835387,
+        "orientation_p95_deg": 4.802270552829779,
+        "optimizer_success_fraction": 1.0,
+        "within_5cm_fraction": 1.0,
+        "antipodal_lobe_fraction": 0.0,
+        "negative_y_fraction": 0.0,
+        "median_evaluations": 3.0,
+        "p95_residual_nt": 67.07292375394213
+      }
+    }
+  },
+  "special_observability": {
+    "radial_z_rx_1_axes": {
+      "rank": 3,
+      "condition": null,
+      "singular_values_nt": [
+        254.32545937506345,
+        241.27431611724535,
+        40.212385965279154
+      ]
+    },
+    "radial_z_rx_2_axes": {
+      "rank": 4,
+      "condition": null,
+      "singular_values_nt": [
+        341.2134101053019,
+        254.32545937506345,
+        254.32545937506345,
+        56.86890160747928,
+        0.0,
+        0.0
+      ]
+    },
+    "radial_z_rx_3_axes": {
+      "rank": 6,
+      "condition": 21.428428867527035,
+      "singular_values_nt": [
+        590.9989625262185,
+        351.7827550734636,
+        351.7827550734636,
+        56.86890160747927,
+        27.580135071023673,
+        27.580135071023673
+      ]
+    }
+  },
+  "two_receiver_diagnostic": {
+    "rank_18x12_independent_pose_jacobian": 12,
+    "rank_18x13_with_unknown_common_gain": 12,
+    "rank_relative_tolerance": 1e-07,
+    "sample_ids": [
+      "1.00-forward-right-waist",
+      "1.00-forward-left-waist"
+    ],
+    "note": "No modeled receiver coupling, radio traffic, or common calibration noise; independent observations only."
+  },
+  "ambiguity": {
+    "position_m": [
+      0.22,
+      0.43,
+      0.17
+    ],
+    "antipodal_measurement_difference_t": 0.0,
+    "exact_seed_position_error_m": 6.206335383118183e-17,
+    "mirror_seed_position_error_m": 1.0241093691593688,
+    "mirror_seed_residual_nt": 1.66753504630467e-14,
+    "finite_loop_antipodal_difference_t": 3.4763243230846543e-22,
+    "displaced_source_mirror_measurement_difference_nt": 43.38621901424857,
+    "displaced_positive_start_error_m": 1.1775693440128312e-16,
+    "displaced_negative_start_error_m": 0.9195572973576638,
+    "displaced_negative_start_residual_nt": 1.2114511417894558,
+    "random_start_trials": [
+      {
+        "trial": 0,
+        "position_error_m": 1.4946834900704541e-16,
+        "nearest_antipodal_error_m": 1.4946834900704541e-16,
+        "solver_success": true,
+        "evaluations": 13,
+        "residual_nt": 1.0877241585074829e-14
+      },
+      {
+        "trial": 1,
+        "position_error_m": 1.2412670766236366e-16,
+        "nearest_antipodal_error_m": 1.2412670766236366e-16,
+        "solver_success": true,
+        "evaluations": 10,
+        "residual_nt": 1.8823408200871828e-14
+      },
+      {
+        "trial": 2,
+        "position_error_m": 1.2412670766236366e-16,
+        "nearest_antipodal_error_m": 1.2412670766236366e-16,
+        "solver_success": true,
+        "evaluations": 16,
+        "residual_nt": 6.911070779340991e-15
+      },
+      {
+        "trial": 3,
+        "position_error_m": 1.0241093691593686,
+        "nearest_antipodal_error_m": 6.206335383118183e-17,
+        "solver_success": true,
+        "evaluations": 15,
+        "residual_nt": 1.3778241685099074e-14
+      },
+      {
+        "trial": 4,
+        "position_error_m": 1.0241093691593686,
+        "nearest_antipodal_error_m": 1.0385185452638061e-16,
+        "solver_success": true,
+        "evaluations": 16,
+        "residual_nt": 1.4374866443436885e-14
+      },
+      {
+        "trial": 5,
+        "position_error_m": 2.7755575615628914e-17,
+        "nearest_antipodal_error_m": 2.7755575615628914e-17,
+        "solver_success": true,
+        "evaluations": 20,
+        "residual_nt": 3.7839997217823075e-14
+      },
+      {
+        "trial": 6,
+        "position_error_m": 3.925231146709438e-17,
+        "nearest_antipodal_error_m": 3.925231146709438e-17,
+        "solver_success": true,
+        "evaluations": 12,
+        "residual_nt": 1.4148476445436274e-14
+      },
+      {
+        "trial": 7,
+        "position_error_m": 1.0241093691593688,
+        "nearest_antipodal_error_m": 9.614813431917819e-17,
+        "solver_success": true,
+        "evaluations": 18,
+        "residual_nt": 1.5579330703422797e-14
+      },
+      {
+        "trial": 8,
+        "position_error_m": 1.0241093691593686,
+        "nearest_antipodal_error_m": 1.1443916996305594e-16,
+        "solver_success": true,
+        "evaluations": 10,
+        "residual_nt": 1.251751406487905e-14
+      },
+      {
+        "trial": 9,
+        "position_error_m": 3.925231146709438e-17,
+        "nearest_antipodal_error_m": 3.925231146709438e-17,
+        "solver_success": true,
+        "evaluations": 14,
+        "residual_nt": 1.3908671612709567e-14
+      },
+      {
+        "trial": 10,
+        "position_error_m": 1.0241093691593688,
+        "nearest_antipodal_error_m": 1.4946834900704541e-16,
+        "solver_success": true,
+        "evaluations": 15,
+        "residual_nt": 4.158999629599582e-14
+      },
+      {
+        "trial": 11,
+        "position_error_m": 6.206335383118183e-17,
+        "nearest_antipodal_error_m": 6.206335383118183e-17,
+        "solver_success": true,
+        "evaluations": 11,
+        "residual_nt": 1.521288028311261e-14
+      },
+      {
+        "trial": 12,
+        "position_error_m": 1.0241093691593686,
+        "nearest_antipodal_error_m": 3.925231146709438e-17,
+        "solver_success": true,
+        "evaluations": 17,
+        "residual_nt": 1.8361247592646566e-14
+      },
+      {
+        "trial": 13,
+        "position_error_m": 6.206335383118183e-17,
+        "nearest_antipodal_error_m": 6.206335383118183e-17,
+        "solver_success": true,
+        "evaluations": 12,
+        "residual_nt": 1.5099075408420127e-14
+      },
+      {
+        "trial": 14,
+        "position_error_m": 1.2412670766236366e-16,
+        "nearest_antipodal_error_m": 1.2412670766236366e-16,
+        "solver_success": true,
+        "evaluations": 12,
+        "residual_nt": 9.915690423423114e-15
+      },
+      {
+        "trial": 15,
+        "position_error_m": 1.1443916996305594e-16,
+        "nearest_antipodal_error_m": 1.1443916996305594e-16,
+        "solver_success": true,
+        "evaluations": 17,
+        "residual_nt": 2.0629824776701337e-14
+      },
+      {
+        "trial": 16,
+        "position_error_m": 1.0241093691593686,
+        "nearest_antipodal_error_m": 5.551115123125783e-17,
+        "solver_success": true,
+        "evaluations": 12,
+        "residual_nt": 1.3630756978096104e-14
+      },
+      {
+        "trial": 17,
+        "position_error_m": 1.0241093691593686,
+        "nearest_antipodal_error_m": 6.206335383118183e-17,
+        "solver_success": true,
+        "evaluations": 13,
+        "residual_nt": 1.2826533160317654e-14
+      },
+      {
+        "trial": 18,
+        "position_error_m": 9.614813431917819e-17,
+        "nearest_antipodal_error_m": 9.614813431917819e-17,
+        "solver_success": true,
+        "evaluations": 28,
+        "residual_nt": 1.4179339785798276e-14
+      },
+      {
+        "trial": 19,
+        "position_error_m": 1.0241093691593686,
+        "nearest_antipodal_error_m": 2.7755575615628914e-17,
+        "solver_success": true,
+        "evaluations": 17,
+        "residual_nt": 1.452060172838324e-14
+      },
+      {
+        "trial": 20,
+        "position_error_m": 1.0241093691593688,
+        "nearest_antipodal_error_m": 1.1102230246251565e-16,
+        "solver_success": true,
+        "evaluations": 15,
+        "residual_nt": 7.646140289116028e-15
+      },
+      {
+        "trial": 21,
+        "position_error_m": 1.7772239894833365e-16,
+        "nearest_antipodal_error_m": 1.7772239894833365e-16,
+        "solver_success": true,
+        "evaluations": 18,
+        "residual_nt": 3.33184864201578e-14
+      },
+      {
+        "trial": 22,
+        "position_error_m": 1.0241093691593688,
+        "nearest_antipodal_error_m": 6.798699777552591e-17,
+        "solver_success": true,
+        "evaluations": 24,
+        "residual_nt": 2.1935562941082632e-14
+      },
+      {
+        "trial": 23,
+        "position_error_m": 1.0241093691593688,
+        "nearest_antipodal_error_m": 1.2412670766236366e-16,
+        "solver_success": true,
+        "evaluations": 12,
+        "residual_nt": 7.581548912163621e-15
+      }
+    ],
+    "note": "One displaced-source pose is a diagnostic, not global uniqueness or workspace proof."
+  },
+  "failure_semantics": "Optimizer failure is status=false; accuracy failure is >.05m; antipodal lobe is dot(p_hat,p_true)<0; negative_y is a separate hemisphere diagnostic; all included in errors."
+}

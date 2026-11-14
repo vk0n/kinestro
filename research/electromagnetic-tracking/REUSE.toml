@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+# SPDX-License-Identifier: CC-BY-4.0
+version = 1
+
+# Only synthetic, derived report artifacts; no external or participant data.
+[[annotations]]
+path = [
+  "results/summary.json",
+  "results/workspace.csv",
+  "results/pose_summary.csv",
+  "results/body_size_summary.csv",
+  "results/distance_summary.csv",
+  "results/observability.csv",
+  "results/finite_field.csv",
+  "figures/workspace.svg",
+  "figures/sensitivity.svg",
+]
+SPDX-FileCopyrightText = "2026 Vladyslav Kononiuk"
+SPDX-License-Identifier = "CC-BY-4.0"
