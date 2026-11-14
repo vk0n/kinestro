@@ -2,11 +2,15 @@
 
 **Wearable Spatial Input System** · **Research foundation; no prototype validated**
 
-Kinestro explores **Dirigokinesis — Natural Spatial Human–Computer Interaction**: conductor-like hand movements, body-relative spatial tracking, and muscle-based gestures for interacting with digital environments. The ambition is a modular input platform that can grow from Linux desktops to VR, gaming, and smart-home integration through a Linux host.
+Kinestro is an open-source hardware and software project implementing **Cyberdirigokinesis — Natural Spatial Human–Computer Interaction**: controlling digital systems through natural human movements and gestures. Cyberdirigokinesis is a coined term for the broader interaction paradigm of physical movements, spatial positioning, and gestures; Kinestro is its specific modular wearable implementation.
+
+Kinestro explores conductor-like hand movements, body-relative spatial tracking, and muscle-based gestures. The ambition is a modular input platform that can grow from Linux desktops to VR, gaming, and smart-home integration through a Linux host.
+
+Voice interaction is a separate, independent concept. Voice recognition and voice command processing are outside Cyberdirigokinesis and are not Kinestro requirements or core subsystems. Voice-controlled systems may complement Kinestro through optional external integration.
 
 Natural, expressive control is the product goal. Cursor control is the first application, rather than the limit of the platform.
 
-## Initial concept
+## Initial Kinestro system
 
 - Two forearm modules acquire sensing data and provide haptic feedback.
 - A central wearable module provides a body-relative reference; an electromagnetic field generator is the preferred research candidate.

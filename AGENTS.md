@@ -2,14 +2,15 @@
 
 ## Purpose and current scope
 
-Kinestro is a documentation-first research project for a Wearable Spatial Input System based on Dirigokinesis. Read [README.md](README.md), [requirements](docs/requirements.md), [architecture](docs/architecture.md), and the relevant [research items](docs/research-backlog.md) before changing the design.
+Kinestro is a documentation-first open-source hardware and software project for a Wearable Spatial Input System implementing Cyberdirigokinesis — Natural Spatial Human–Computer Interaction: controlling digital systems through natural human movements and gestures. Cyberdirigokinesis names the broader interaction paradigm; Kinestro names the specific modular wearable implementation. Read [README.md](README.md), [requirements](docs/requirements.md), [architecture](docs/architecture.md), and the relevant [research items](docs/research-backlog.md) before changing the design.
 
 The foundation task authorizes documentation only. Do not add application code, firmware, Linux drivers, recognition models, build scaffolding, component selections, or empty placeholder directories. Later explicit owner tasks may authorize specific experiments or implementation; keep those changes within their stated scope.
 
 ## Preserve the architectural boundaries
 
 - A required Linux host performs fusion, coordinate estimation, gesture interpretation, interaction-state management, input-event generation, application integration, and feedback orchestration.
-- The initial concept has two forearm acquisition/feedback modules and one central wearable reference module.
+- The initial Kinestro system has two forearm acquisition/feedback modules and one central wearable reference module.
+- Cyberdirigokinesis concerns physical movements, spatial positioning, and gestures. Voice interaction is a separate, independent concept. Do not introduce voice recognition or voice command processing as part of Cyberdirigokinesis or as a Kinestro requirement or core subsystem; interoperability with voice-controlled systems may only be an optional external integration.
 - Tracking is body-relative. Do not introduce a dependency on stationary cameras, tracking stations, room infrastructure, world coordinates, or SLAM.
 - Keep acquisition, estimation, interpretation, interaction policy, and output adapters separate. Preserve replaceable sensing, configurable hand roles, bidirectional communication, and future hardware-free testing.
 - Do not silently promote electromagnetic tracking, BLE details, cameras, mount placement, or any algorithm into proven or final choices.

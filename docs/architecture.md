@@ -2,6 +2,8 @@
 
 ## Status and boundaries
 
+This architecture describes **Kinestro — Wearable Spatial Input System**, the specific modular wearable implementation of **Cyberdirigokinesis — Natural Spatial Human–Computer Interaction**. Cyberdirigokinesis is the broader interaction paradigm of controlling digital systems through natural human movements and gestures, encompassing physical movements, spatial positioning, and gestures. Voice interaction is a separate, independent concept: voice recognition and voice command processing are outside Cyberdirigokinesis and are not Kinestro requirements or core subsystems. Any future interoperability with voice-controlled systems is an optional external integration.
+
 The established system boundary is two forearm modules, one central wearable reference module, and a required Linux host ([ADR-0001](adr/0001-linux-host-and-module-boundaries.md)). Initial tracking is body-relative and requires no room infrastructure ([ADR-0002](adr/0002-body-relative-tracking.md)). Interfaces below are conceptual proposals, not a selected wire protocol, process layout, or implementation language.
 
 Electromagnetic tracking plus IMU is the preferred investigation. BLE is the preferred forearm transport. Neither choice is a validated solution. The central module's mount, excitation design, receiver sensing method, host connection, and timing topology remain open.

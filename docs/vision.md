@@ -2,11 +2,25 @@
 
 ## Product philosophy
 
-Kinestro is a **Wearable Spatial Input System**, grounded in **Dirigokinesis — Natural Spatial Human–Computer Interaction**. It explores conductor-like control: natural, expressive, precise hand movements that manipulate digital objects and interfaces.
+Kinestro is a **Wearable Spatial Input System**, an open-source hardware and software project implementing **Cyberdirigokinesis — Natural Spatial Human–Computer Interaction**. It explores conductor-like control: natural, expressive, precise hand movements that manipulate digital objects and interfaces.
 
 The long-term ambition is to support interaction without traditional physical controllers such as mice and keyboards. The first useful demonstration is a conventional Linux desktop, but the architecture should support more than pointing: contextual commands, two-hand interaction, future VR and gaming, and smart-home integration mediated by the Linux host.
 
 Modularity serves research. A sensor, estimator, gesture method, or application adapter should be replaceable without redefining the entire platform. Comfort and predictable intent matter as much as tracking precision. No sensing feasibility or ergonomic benefit has been established yet.
+
+## Concept and scope
+
+**Cyberdirigokinesis — Natural Spatial Human–Computer Interaction** means **controlling digital systems through natural human movements and gestures**. It is a coined term for an interaction paradigm involving physical movements, spatial positioning, and gestures, independent of any particular hardware implementation.
+
+The name combines three ideas:
+
+- **Cyber** — digital and computer-based systems.
+- **Dirigo** (Latin) — to direct, guide, or control.
+- **Kinesis** (Greek) — movement.
+
+Together, these express directing digital systems through natural human movement. Cyberdirigokinesis is the broader concept; Kinestro is the specific modular wearable input system implementing it. The product name and technical classification remain **Kinestro — Wearable Spatial Input System**.
+
+Voice interaction is a separate, independent concept. Voice recognition and voice command processing are outside Cyberdirigokinesis and are not Kinestro requirements or core subsystems. Voice-controlled systems may operate alongside Kinestro and complement it through optional external integration.
 
 ## Intended experience
 

@@ -1,5 +1,11 @@
 # Requirements
 
+## Concept and product scope
+
+**Cyberdirigokinesis — Natural Spatial Human–Computer Interaction** is the broader concept of controlling digital systems through natural human movements and gestures, encompassing physical movements, spatial positioning, and gestures. **Kinestro — Wearable Spatial Input System** is the specific modular wearable hardware and software project implementing it, with open-source licensing choices still pending.
+
+Voice interaction is a separate, independent concept. Voice recognition and voice command processing are outside Cyberdirigokinesis and are not Kinestro requirements or core subsystems. Any future interoperability with voice-controlled systems is an optional external integration.
+
 ## Classification
 
 This is a research baseline, not a validated product specification. Each item uses one of four classifications:
