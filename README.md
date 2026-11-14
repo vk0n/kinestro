@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Kinestro
 
 **Wearable Spatial Input System** · **Research foundation; no prototype validated**
@@ -55,8 +60,12 @@ Approximately **5 cm position accuracy** for broad movements, **300 g maximum ta
 
 The [first three proposed experiments](docs/research-backlog.md#first-three-experiments) are electromagnetic workspace characterization, wrist-motion observability, and discrete sEMG signal feasibility. No schedule or procurement commitment is implied.
 
-## Contributing and licensing
+## Contributing
 
 Start with the requirements and research backlog. Propose a measurable question, method, and decision consequence before adding implementation or selecting hardware. Keep technical documentation and code comments in English. Record evidence and limitations; distinguish literature results from Kinestro measurements.
 
-Kinestro is intended to become an open-source hardware and software project. **Software, hardware, and documentation license choices are pending an explicit owner decision.** No license is selected or granted by this foundation; no `LICENSE` file is introduced.
+## Licensing
+
+Kinestro follows **openness with reciprocity**: software and firmware use [MPL-2.0](LICENSES/MPL-2.0.txt), original open hardware design sources use [CERN-OHL-W-2.0](LICENSES/CERN-OHL-W-2.0.txt), and project documentation uses [CC-BY-4.0](LICENSES/CC-BY-4.0.txt). Commercial use is permitted under each license's terms.
+
+Current files are documentation licensed through SPDX headers. Software and hardware license texts establish the approved policy; future source files need explicit licensing when added. See [LICENSE.md](LICENSE.md) for scope, attribution, third-party/data exclusions, trademark boundaries, and the current unused-license exception to full REUSE compliance.

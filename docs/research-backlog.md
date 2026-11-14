@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Research backlog and milestones
 
 All items below are **open**, and all experiments are **proposals, not executed work**. Priority reflects uncertainty and dependency rather than a procurement order. No components, implementation, model training, or human data collection are authorized by this documentation foundation.
@@ -96,7 +101,7 @@ Planning and contract research may overlap, but hardware integration should not 
 
 ## Assumptions and choices for owner review
 
-- **Licensing:** Choose software, hardware, documentation, and any publishable dataset licensing explicitly before adding license files or asserting reuse terms.
+- **Licensing and data:** Software/firmware (MPL-2.0), original hardware design sources (CERN-OHL-W-2.0), and documentation (CC-BY-4.0) are approved in [ADR-0006](adr/0006-open-source-licensing.md). Any publishable dataset or physiological/video recording still requires separate licensing, privacy, and consent decisions; external materials retain their applicable licenses.
 - **Tracking envelope:** Agree on practical hand-to-reference distances and poses, receiver versus anatomical reference point, and E1's proposed 95th-percentile interpretation of the approximate 5 cm target.
 - **Budgets:** Define tolerable latency, jitter, false actions, missed releases, complete-module mass/comfort, and the central module's mass/power envelope. Confirm how the aspirational 4–6-hour runtime applies to each module and workload.
 - **Mounting and interaction:** No waist/chest/distributed mount is selected. Approve trial variants, deactivation candidates, neutral/recenter behavior, and supported/raised-arm comfort tasks.

@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Vision
 
 ## Product philosophy
@@ -7,6 +12,8 @@ Kinestro is a **Wearable Spatial Input System**, an open-source hardware and sof
 The long-term ambition is to support interaction without traditional physical controllers such as mice and keyboards. The first useful demonstration is a conventional Linux desktop, but the architecture should support more than pointing: contextual commands, two-hand interaction, future VR and gaming, and smart-home integration mediated by the Linux host.
 
 Modularity serves research. A sensor, estimator, gesture method, or application adapter should be replaceable without redefining the entire platform. Comfort and predictable intent matter as much as tracking precision. No sensing feasibility or ergonomic benefit has been established yet.
+
+Open development follows the approved [licensing policy](../LICENSE.md): MPL-2.0 for project software/firmware, CERN-OHL-W-2.0 for original open hardware design sources, and CC-BY-4.0 for documentation. This supports commercial use with the applicable software/hardware reciprocity and documentation attribution obligations.
 
 ## Concept and scope
 

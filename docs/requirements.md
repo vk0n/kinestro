@@ -1,8 +1,13 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Requirements
 
 ## Concept and product scope
 
-**Cyberdirigokinesis — Natural Spatial Human–Computer Interaction** is the broader concept of controlling digital systems through natural human movements and gestures, encompassing physical movements, spatial positioning, and gestures. **Kinestro — Wearable Spatial Input System** is the specific modular wearable hardware and software project implementing it, with open-source licensing choices still pending.
+**Cyberdirigokinesis — Natural Spatial Human–Computer Interaction** is the broader concept of controlling digital systems through natural human movements and gestures, encompassing physical movements, spatial positioning, and gestures. **Kinestro — Wearable Spatial Input System** is the specific modular wearable hardware and software project implementing it under the approved [licensing policy](../LICENSE.md).
 
 Voice interaction is a separate, independent concept. Voice recognition and voice command processing are outside Cyberdirigokinesis and are not Kinestro requirements or core subsystems. Any future interoperability with voice-controlled systems is an optional external integration.
 
@@ -53,7 +58,7 @@ Accepted [ADRs](adr/README.md) record established project decisions. Proposed en
 | N-09 | D | Consider wearable electrical, battery, thermal, electromagnetic, and skin-contact risks before on-body experiments. | Documented hazard review and experiment-specific controls |
 | N-10 | D | Measure metallic/conductive-object sensitivity, tracking range, and power. Metal desk/chair compatibility is not fundamental. | E1 controlled environment perturbations |
 | N-11 | D | Keep development incremental, research-driven, and measurable; explicitly record uncertainty. | Hypothesis/evidence review at each milestone |
-| N-12 | D | Keep technical documentation and code comments in English. Defer all license choices to the owner. | Documentation and repository review |
+| N-12 | D | Keep technical documentation and code comments in English. Follow the owner-approved MPL-2.0 software/firmware, CERN-OHL-W-2.0 original hardware source, and CC-BY-4.0 documentation policy, with explicit file-level assignments. | Documentation, SPDX, and licensing review; ADR-0006 |
 
 ## Hypotheses and unresolved choices
 

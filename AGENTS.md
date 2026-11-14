@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Repository instructions
 
 ## Purpose and current scope
@@ -31,13 +36,17 @@ Update the relevant docs together to prevent contradictions. Record substantive 
 - Technical documentation and code comments must be in English; conversation may follow the owner's language.
 - Use focused branches and reviewable pull requests. Preserve unrelated work and do not merge without authorization.
 - Keep the repository small. Add files and directories only when they have content and a clear purpose.
-- Do not choose a software, hardware, documentation, or dataset license without an explicit owner decision. Do not add license badges or SPDX identifiers that imply such a decision.
+- Follow the approved [licensing policy](LICENSE.md) and [ADR-0006](docs/adr/0006-open-source-licensing.md): `MPL-2.0` for Kinestro-authored software/firmware, `CERN-OHL-W-2.0` for original open hardware design sources, and `CC-BY-4.0` for project documentation. Apply the appropriate license explicitly when adding a file; do not imply that a stored license text licenses nonexistent files.
+- Add correct `SPDX-License-Identifier` and `SPDX-FileCopyrightText` metadata to all future contributions. Prefer unobtrusive comment headers for Markdown and use adjacent `.license` files or narrow `REUSE.toml` annotations when a file format needs them. Current documentation attribution is owner-confirmed as `2026 Vladyslav Kononiuk`; preserve other contributors' verified notices and use appropriate years without inventing ownership.
+- Keep official texts in `LICENSES/` unchanged and preserve third-party notices and applicable licenses. Do not relicense external resources or datasets through a blanket annotation. Datasets and physiological/video recordings require separate licensing, privacy, and consent decisions. Branding has no automatic trademark license. Changes to the approved policy need an explicit owner decision.
 - Before a later on-body experiment, address the relevant battery, thermal, electromagnetic, skin-contact, electrical-isolation, and data-consent risks described in the requirements and experiment proposal. Do not claim certification from a bench test.
 - Store no participant-identifiable recordings, credentials, or raw physiological data in Git. Agree on consent, retention, and data access before collection or publication.
 
 ## Verification and handoff
 
 For documentation changes, check relative links and anchors, Mermaid syntax when a renderer is available, Markdown structure, requirement/ADR consistency, and `git diff --check`. Review all changed files. Do not create a test suite or CI solely to restate prose.
+
+For licensing changes, verify SPDX identifiers and official text integrity, check every project file's license assignment, and run `reuse lint` when available. Report actual results. The owner-requested future MPL and CERN-OHL-W texts are currently unused; document that exception rather than claiming full compliance or assigning false licenses to silence it.
 
 There are currently no build or application tests. State which documentation checks actually ran and whether the architecture diagram was rendered. Future implementation tasks should add only checks appropriate to their behavior and scope.
 

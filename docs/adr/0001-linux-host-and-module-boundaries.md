@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # ADR-0001: Required Linux host and wearable module boundaries
 
 - Date: 2026-11-13

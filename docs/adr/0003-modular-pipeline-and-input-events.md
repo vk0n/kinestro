@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # ADR-0003: Modular pipeline and hardware-independent events
 
 - Date: 2026-11-13

@@ -1,9 +1,16 @@
+<!--
+SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # ADR-0005: Documentation-first foundation and owner-selected licensing
 
 - Date: 2026-11-13
-- Status: Accepted
+- Status: Partially superseded by [ADR-0006](0006-open-source-licensing.md) for licensing deferral; documentation-first direction remains accepted
 - Basis: Owner's project foundation brief
 - Requirements: N-09, N-11, N-12
+
+Historical record: the context and decision below describe the original 2026-11-13 deferral. The owner has since approved the licenses recorded in ADR-0006 and [LICENSE.md](../../LICENSE.md). Only the licensing deferral is superseded; the documentation-first and evidence-before-hardware decisions remain in effect.
 
 ## Context
 
