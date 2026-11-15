@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # Research backlog and milestones
 
-All items below are **open**, and all experiments are **proposals, not executed work**. Priority reflects uncertainty and dependency rather than a procurement order. No components, implementation, model training, or human data collection are authorized by this documentation foundation.
+All research items below remain **open**. Physical experiments are **proposals, not executed work**; the initial theoretical/numerical phase of E1 has been performed in a separately authorized [M1/E1 research task](../research/electromagnetic-tracking/README.md). Priority reflects uncertainty and dependency rather than a procurement order. The foundation itself authorized no components, implementation, model training, or human data collection.
 
 ## Prioritized research questions
 
@@ -30,6 +30,8 @@ The order below prioritizes the largest architecture risks. E2 can be planned wh
 ### E1 — Off-body electromagnetic workspace and distortion characterization
 
 **Priority 1. Hypothesis:** U-01. A candidate excitation/receiver geometry provides sufficiently observable, repeatable position over the proposed body-relative two-arm workspace without an obviously incompatible power requirement.
+
+**Research progress (2026-11-15):** Initial literature/theoretical/numerical investigation is available in the [feasibility report](../research/electromagnetic-tracking/feasibility-report.md), with [reproducible Python simulations and tests](../research/electromagnetic-tracking/README.md), [synthetic results](../research/electromagnetic-tracking/simulation-results.md), [architecture comparison](../research/electromagnetic-tracking/architecture-comparison.md), and [proposed bench validation](../research/electromagnetic-tracking/bench-validation-plan.md). Work performed includes dipole/finite-loop modeling, assumed waist/chest workspaces, noisy and mismatched pose reconstruction, observability/ambiguity analysis, and order-of-magnitude power calculations. No Kinestro physical measurements exist; **E1 is not complete**. Follow-up decisions concern measured receiver noise/bandwidth, practical source/receiver calibration, hemisphere handling or displaced sources, and power/thermal budgets before selecting an architecture. The bench comparison must validate or reject the model assumptions and test both receivers, distortion and timing.
 
 **Method:**
 

@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+# SPDX-License-Identifier: MPL-2.0
+# Exact directly used versions from the reported run. Python 3.14.7.
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2
+pytest==9.2.0

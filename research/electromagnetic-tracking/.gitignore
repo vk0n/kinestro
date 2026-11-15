@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Vladyslav Kononiuk
+# SPDX-License-Identifier: MPL-2.0
+__pycache__/
+.pytest_cache/
+.venv/

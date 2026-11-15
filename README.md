@@ -26,7 +26,7 @@ The proposed interaction combines broad arm-position control with fine wrist-ori
 
 ## Evidence and status
 
-This repository contains the technical foundation and research plan only. It contains no application code, firmware, drivers, trained recognition model, selected components, or validated performance results.
+This repository contains the technical foundation and an isolated, executable [M1/E1 numerical research study](research/electromagnetic-tracking/README.md). It contains no application code, firmware, drivers, trained recognition model, selected components, or Kinestro hardware measurements. Simulated findings do not validate wearable performance; E1 remains open pending bench measurements.
 
 | Classification | Current position |
 | --- | --- |
@@ -45,6 +45,7 @@ Approximately **5 cm position accuracy** for broad movements, **300 g maximum ta
 | [Requirements](docs/requirements.md) | Confirmed scope, tentative targets, and verification intentions |
 | [Architecture](docs/architecture.md) | Modules, Mermaid diagram, data flow, and conceptual contracts |
 | [Research backlog](docs/research-backlog.md) | Priorities, first three experiments, milestones, and owner review items |
+| [M1/E1 research](research/electromagnetic-tracking/README.md) | Electromagnetic feasibility analysis, Python simulations, synthetic results, and proposed off-body validation |
 | [Architecture decisions](docs/adr/README.md) | Accepted decisions and their rationale |
 | [Agent instructions](AGENTS.md) | Guidance for future repository work |
 
@@ -68,4 +69,4 @@ Start with the requirements and research backlog. Propose a measurable question,
 
 Kinestro follows **openness with reciprocity**: software and firmware use [MPL-2.0](LICENSES/MPL-2.0.txt), original open hardware design sources use [CERN-OHL-W-2.0](LICENSES/CERN-OHL-W-2.0.txt), and project documentation uses [CC-BY-4.0](LICENSES/CC-BY-4.0.txt). Commercial use is permitted under each license's terms.
 
-Current files are documentation licensed through SPDX headers. Software and hardware license texts establish the approved policy; future source files need explicit licensing when added. See [LICENSE.md](LICENSE.md) for scope, attribution, third-party/data exclusions, trademark boundaries, and the current unused-license exception to full REUSE compliance.
+Current documentation uses CC-BY-4.0 and the isolated E1 research code uses MPL-2.0, with explicit SPDX licensing. Future source files need explicit licensing when added; no hardware design sources exist yet. See [LICENSE.md](LICENSE.md) for scope, attribution, third-party/data exclusions, trademark boundaries, and the remaining unused-hardware-license exception to full REUSE compliance.

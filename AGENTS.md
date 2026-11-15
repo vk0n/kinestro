@@ -46,7 +46,7 @@ Update the relevant docs together to prevent contradictions. Record substantive 
 
 For documentation changes, check relative links and anchors, Mermaid syntax when a renderer is available, Markdown structure, requirement/ADR consistency, and `git diff --check`. Review all changed files. Do not create a test suite or CI solely to restate prose.
 
-For licensing changes, verify SPDX identifiers and official text integrity, check every project file's license assignment, and run `reuse lint` when available. Report actual results. The owner-requested future MPL and CERN-OHL-W texts are currently unused; document that exception rather than claiming full compliance or assigning false licenses to silence it.
+For licensing changes, verify SPDX identifiers and official text integrity, check every project file's license assignment, and run `reuse lint` when available. Report actual results. MPL-2.0 now covers the E1 research code; the owner-requested CERN-OHL-W text remains unused pending hardware sources. Document that exception rather than claiming full compliance or assigning false licenses to silence it.
 
 There are currently no build or application tests. State which documentation checks actually ran and whether the architecture diagram was rendered. Future implementation tasks should add only checks appropriate to their behavior and scope.
 
