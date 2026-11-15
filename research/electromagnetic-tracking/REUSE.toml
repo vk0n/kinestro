@@ -14,6 +14,18 @@ path = [
   "results/finite_field.csv",
   "figures/workspace.svg",
   "figures/sensitivity.svg",
+  "results/boundary-v1/summary.json",
+  "results/boundary-v1/workspace.csv",
+  "results/boundary-v1/static_regions.csv",
+  "results/boundary-v1/static_offsets.csv",
+  "results/boundary-v1/initializations.csv",
+  "results/boundary-v1/trajectory_summary.csv",
+  "results/boundary-v1/trajectory_traces.csv",
+  "results/boundary-v1/trajectory_hypotheses.csv",
+  "results/boundary-v1/restart_summary.csv",
+  "results/boundary-v1/hypothesis_sets.csv",
+  "figures/boundary-v1/static_boundary.svg",
+  "figures/boundary-v1/boundary_trajectories.svg",
 ]
 SPDX-FileCopyrightText = "2026 Vladyslav Kononiuk"
 SPDX-License-Identifier = "CC-BY-4.0"

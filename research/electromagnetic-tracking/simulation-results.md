@@ -7,6 +7,8 @@ SPDX-License-Identifier: CC-BY-4.0
 
 **Evidence class: SIMULATED throughout. No physical measurements were performed.** These are conditional results for the source, geometry, calibration, noise and branch assumptions below, not a sensor specification or validated Kinestro performance. See [reproduction instructions](README.md#reproduce), the [model/derivation](feasibility-report.md), and the machine-readable [summary](results/summary.json).
 
+The original results below are the **72-point positive-y baseline from commit `6ac8d9e`**, retained unchanged for comparability. They do not validate that y stays positive in Kinestro. The separate [boundary/hemisphere extension](#boundary-and-hemisphere-validation-boundary-v1) evaluates that missing condition without altering the anatomical assumptions or correcting signs using truth.
+
 ## Method, parameters, and denominators
 
 The committed run uses seed **20261115**, CPython 3.14.7, NumPy 2.5.4, SciPy 1.18.1, and Matplotlib 3.11.2. Source-module SHA-256 hashes are recorded in the JSON. It evaluates **4,320 primary pose fits**, plus 24 random-initialization fits and specific ambiguity diagnostics. No observed failures are removed before computing error distributions.
@@ -105,3 +107,87 @@ The preliminary 5 cm screen is plausible **in favorable synthetic conditions**, 
 Six noise trials per point and one roll per mismatch point provide screening-level empirical percentiles, not confidence intervals or a reliable extreme-error probability. Results depend on the assumed pose distribution and branch prior. No saturation, colored/coherent interference, source-current fluctuations, thermal drift, receive-coil flux integration, receiver loading, mutual coupling, metal fields, human motion, BLE timing, fusion or display latency is modeled. A scalar field-noise number cannot establish the acquisition time needed to achieve it.
 
 Model equations, limiting cases, calibration variants, branch tests and independent forward-model cases explain the recorded failures; no unexplained solver-status failures occurred in this run. The reference-frame attitude is receiver attitude, not hand articulation. Figures and summaries are small reproducible synthetic report artifacts; raw Monte Carlo draws are regenerated from the seed rather than committed. Use the [off-body bench plan](bench-validation-plan.md) to determine whether the assumptions are physically attainable. E1 remains open.
+
+## Boundary and hemisphere validation (boundary-v1)
+
+**Evidence class: additional synthetic diagnostics, not physical or anatomical validation.** This extension addresses the favorable y>0 condition in the original 72-point study. The old geometry, solver, model and all nine baseline artifacts remain unchanged. Expanded outputs are isolated under [results/boundary-v1](results/boundary-v1/summary.json) and [figures/boundary-v1](figures/boundary-v1/static_boundary.svg).
+
+### Fixtures, protocols and interpretation
+
+The static fixture uses source-relative y offsets **−0.10, −0.05, −0.02, −0.005, 0, +0.005, +0.02, +0.05, +0.10 m**. Four (x,z) points are (0.25,0.15), (−0.25,−0.15), (0.55,−0.25), (−0.55,0.25) m. Each has two RX orientations: identity and XYZ Euler (35°,−25°,70°). Radii are approximately 0.292–0.612 m, away from the point-source singularity. All poses have explicit antipodal partners with the **same** attitude; reflection negates x, y and z together, not y alone.
+
+There are 144 fixture poses: 4 x/z choices × 9 offsets × 2 orientations × 2 mount transforms. Waist origin is (0,0,0); chest is (0,0.04,0.32) m in the same assumed body frame. The relative fixtures deliberately repeat the same free-space problem at each mount. Different noisy results between mount labels are independent draws, **not evidence that one mounting position handles ambiguity better**. [workspace.csv](results/boundary-v1/workspace.csv) records source-relative and body-frame coordinates, orientations, mirror IDs and `abstract_off_body_diagnostic` classification. These are not invented realistic arm poses. The separately preserved anatomical baseline is only anatomically motivated, not measured anthropometry.
+
+Seed **20261116** spawns independent static, random-initialization and trajectory streams. The static sweep uses 0/0.1/1/10 nT independent Gaussian RMS noise per signed matrix entry and two draws per pose/level: **1,152 observation matrices per source model**. The same random perturbation is used for paired co-centered/separated comparisons to control Monte Carlo variation; this is not a claim of correlated noise between physical receivers. Zero-noise repetitions duplicate deterministic fixtures and are not independent evidence.
+
+The existing ±2 m optimizer box, 180-evaluation budget, RMS moment and calibration assumptions are retained. Truth enters only generation and the separate scoring function; it is absent from all estimator/continuation interfaces and selection criteria. No trajectory is initialized from its true pose and no sign is flipped to reduce the scored error. This matters when comparing to local-precision benchmarks: the [2019 reference paper](https://arxiv.org/html/1909.08356v1) explicitly used truth-based sign correction for its simulation RMSE; that correction is **not** used here.
+
+| Strategy | Information actually used |
+| --- | --- |
+| A — current positive-y initialization | Existing observation-derived analytic seed, independently at every frame/fixture; no y bound during optimization |
+| B — previous-pose continuation | First observation initialized with an unverified +y assumption; later observations initialized from the previous estimated pose. No velocity model, continuity penalty, external sign measurement or truth gating |
+| C — two hypotheses | Retain B (or A for static tests) and its exact antipodal partner. The second is generated by the model symmetry, not counted as an independent optimizer success. Never choose a member using truth |
+| D — separated source | Existing diagnostic geometry: x-directed source at (+0.12,0,0) m, other sources at the origin. Two approximate observation-derived starts for static tests; additionally the previous estimate for trajectories. Select converged candidates then smallest observed residual, never actual pose error |
+
+All errors include failed numerical fits. A wrong branch means $\hat p\cdot p_{true}<0$; this is an offline truth-based metric, not a runtime detector. The low-residual wrong-pose proxy means error >5 cm while residual RMS ≤3 times the imposed noise; at zero noise it uses a numerical 10⁻⁶ nT tolerance. This is **not calibrated confidence**. Exact offsets are reported in [static_offsets.csv](results/boundary-v1/static_offsets.csv), separately from [regional summaries](results/boundary-v1/static_regions.csv).
+
+Only two noise realizations per fixed pose/path are used. Reported fractions and percentiles are descriptive screening results, not population probabilities or confidence bounds; zero observed D branch errors at a noise level does not establish a zero failure probability. This extension isolates hemisphere behavior with known calibrated point-source models. The original finite-geometry, calibration, metal, timing and hardware limitations remain unresolved.
+
+### Static sign and boundary results
+
+The coarse regions are disjoint: negative y<−5 mm, near-zero |y|≤5 mm, positive y>5 mm. Each pooled regional row contains 96 attempted observations per noise level; per-mount rows and all nine exact offsets remain available so difficult signs are not hidden in a single workspace average.
+
+| Zero noise, strategy A | Position P95 | Wrong branch | Optimizer success |
+| --- | --- | --- | --- |
+| Positive y>5 mm | Numerical precision | 0% | 100% |
+| Near zero, abs(y)≤5 mm | 1.208 m | 50% | 100% |
+| Negative y<−5 mm | 1.225 m | 100% | 100% |
+
+The same wrong solutions have near-zero residuals. At exact y=0 the analytic eigenvector sign is not determined by the y rule; floating-point sign choices can change between neighboring poses even without imposed noise. This is an initializer discontinuity and a global two-solution ambiguity, not a local field singularity. The full-triad local Jacobian has rank **six at every stress pose**, including y=0. Centered finite-loop antipodal differences remain below approximately $2\times10^{-21}$ T in this fixture sweep.
+
+| At 1 nT | A P95 | A wrong branch | D P95 | D wrong branch |
+| --- | --- | --- | --- | --- |
+| Positive y>5 mm | 5.96 cm | 4.17% | 5.21 cm | 0% |
+| Near zero, abs(y)≤5 mm | 121.13 cm | 47.92% | 4.49 cm | 0% |
+| Negative y<−5 mm | 122.63 cm | 97.92% | 5.09 cm | 0% |
+
+![Static wrong-branch rates and error by exact y offset](figures/boundary-v1/static_boundary.svg)
+
+D distinguishes the signs on these zero-noise fixtures and is much better at 1 nT, but this is not a uniqueness proof or a validated layout. At 10 nT its regional wrong-branch fractions are approximately **5.21–12.50%**, with P95 errors **0.931–1.201 m**. Both data-derived starting fits and their residual selection are retained; a local minimum or noise can still win. The earlier baseline's displaced-source local-minimum counterexample also remains valid and unchanged.
+
+The separate [random-initialization diagnostic](results/boundary-v1/initializations.csv) uses four random attitudes/directions and observation-derived range scales for a fixed near-boundary subset. Without noise, **23/48** fits reach the wrong branch despite all 48 terminating successfully. At 1 nT, **15/48** fits reach the unchanged 180-evaluation budget without success; those records are retained, with residuals approximately 0.284–1.471 nT and errors ranging from 0.188 mm to 0.583 m. This is an observed numerical budget/initialization limitation, not proof of lost local observability. The precise cause of slow termination is not isolated, and a low residual does not override the failed status.
+
+### Continuous trajectories, initialization and recovery
+
+Six abstract paths per mount use 41 samples at 25 ms spacing (one second), two noise trials and all four noise levels: **3,936 observations per source model**. The time interval is a synthetic sampling assumption, not achieved hardware update rate. Paths cover both crossing directions, motion exactly on the plane, ±2 mm near-plane oscillation, a crossing with changing attitude, and a more distant crossing at x=0.8,z=0.3 m. The first two crossings move y from +0.12 to −0.12 m and vice versa at x=0.32,z=0.18 m. [boundary.py](e1/boundary.py) specifies every trajectory and attitude function.
+
+[trajectory_summary.csv](results/boundary-v1/trajectory_summary.csv) retains every path/mount/noise/trial/strategy separately: error median/P95/max, attitude, residual, convergence, initial branch, subsequent branch loss/transitions, final error, step error and error-time integral. A >20 cm estimated-step marker is a declared diagnostic only, not a safety or product threshold. Actual step magnitudes are reported alongside true step magnitudes. The integral measures tracking error over time; this is not an inertial drift model. [trajectory_traces.csv](results/boundary-v1/trajectory_traces.csv) retains per-frame errors, estimated x, branches and residuals for representative waist runs at 0 and 1 nT; other draws regenerate from the seed.
+
+Noiseless waist examples illustrate the distinction:
+
+| Path | A behavior | B behavior |
+| --- | --- | --- |
+| Positive → negative y | Approximately 0.734 m estimate jump near the boundary; final error 0.773 m | Correct continuous branch, maximum step 0.006 m |
+| Negative → positive y | Starts wrong, switches to the now-positive side; approximately 0.734 m jump | Remains continuously mirrored for the entire path; final error 0.773 m, maximum step 0.006 m |
+| Along y=0 | 22 branch transitions; maximum estimate step approximately 1.115 m | Continuous chosen branch; its correctness still depends on the unverified first sign |
+| Crossing with changing attitude | Approximately 0.790 m jump | Continuous correct branch for this positive-start fixture |
+
+Changing attitude does not remove the exact symmetry because the mirrored path uses the same $R(t)$. B is a local warm start, not a full motion filter. It can preserve the correct branch when initialized correctly; it can preserve an incorrect branch just as well. At lower SNR its estimates can also jitter or jump. For example, in the waist far-crossing runs at 10 nT, mean wrong-branch fractions are approximately 53.66% for A, 48.78% for B and 30.49% for D. Those are only two noisy runs, not validated probabilities; source asymmetry and temporal starts do not guarantee robustness.
+
+![Trajectory continuity versus absolute branch correctness](figures/boundary-v1/boundary_trajectories.svg)
+
+The fixed-index restart diagnostic in [restart_summary.csv](results/boundary-v1/restart_summary.csv) discards state at frame 24 (0.6 s) of the positive-to-negative path and reruns the observation-only initializer. Without noise, every remaining estimate is mirrored and the final error is approximately **0.773 m**, although uninterrupted B had tracked correctly. This tests unknown-state reacquisition independently of uninterrupted continuation. It is a synthetic reset, not measured wireless loss or recovery. The accompanying [trajectory hypothesis sets](results/boundary-v1/trajectory_hypotheses.csv) keep both antipodal continuations unresolved rather than relabelling a smooth estimate as verified.
+
+The 10 nT far-crossing records also separate branch loss from bad initialization. Both waist B runs start on the correct branch and subsequently lose it; the two chest-labelled runs start wrong. D loses the branch after a correct start in three of the four far-crossing runs. These mount-labelled draws share the same relative geometry; the difference is noise realization, not a mounting advantage. Thus this simple temporal warm start is neither an absolute-sign detector nor a proven low-SNR motion filter.
+
+### What multiple hypotheses can and cannot establish
+
+In every co-centered static pair, residual differences are zero at the reported precision, including noisy observations. Noise cannot distinguish exact symmetry-related solutions because they make the same prediction against the **same noisy data**. C retains two positions; it does not identify which is physically occupied or enumerate a full noisy posterior. `oracle_set_coverage_5cm_fraction` reports whether at least one candidate is within 5 cm using truth **only for evaluation**; it is not deployable accuracy, a branch-selection rule or a posterior probability. At 1 nT this set coverage is approximately 92.71–97.92% across the three static regions; at 10 nT it drops to approximately 50–52.08%. Keeping two branches cannot repair arbitrary local error.
+
+Local precision, absolute ambiguity, trajectory smoothness, branch-selection reliability and numerical convergence are therefore separate outputs. The JSON's wrong-fit example has **0.592 m actual error**, near-zero residual, rank six and a **1.62 mm conditional local position RMS bound at 1 nT**. That bound ignores the other exact global solution and must not be interpreted as absolute position confidence.
+
+### Implication for Kinestro and physical validation
+
+**Kinestro cannot rely on an unverified positive-y initialization plus a single co-centered source for unrestricted two-arm tracking.** A restricted workspace might support a validated hemisphere prior, and an independently known initial branch plus continuity can support local tracking. Neither condition is established by the old 72-point sample. Receivers near the sides of the body, retracted/resting arm movement, source placement/orientation changes and unknown-state reacquisition must be considered before claiming that y stays positive; these are possible failure modes requiring kinematic/bench validation, not new anatomical measurements.
+
+Prioritize a spatially separated source comparison in the off-body plan, with deliberate sign crossings, low-SNR regions, initialization variation and repeated calibration. The tested one-source displacement supplies useful information but is not selected as the final geometry. Other independently justified positional information or a verified initialization/kinematic constraint may supply the missing sign. Orientation alone cannot distinguish identical-attitude antipodal states; left/right device labels do not establish position, especially with crossed arms. This extension implements no new sensor fusion or hardware and makes no physical safety claim. E1 remains open.

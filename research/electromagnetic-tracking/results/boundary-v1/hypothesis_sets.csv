@@ -1,0 +1,13 @@
+noise_nt,region,attempts,max_co_residual_gap_nt,oracle_set_coverage_5cm_fraction,displaced_residual_gap_median_nt,displaced_near_collapsed_pair_fraction
+0,near_zero_abs_y_le_5mm,96,0,1,36.91445713,0
+0,negative_y_lt_minus5mm,96,0,1,33.43161276,0
+0,positive_y_gt_5mm,96,0,1,33.43161276,0
+0.1,near_zero_abs_y_le_5mm,96,0,1,36.84887092,0
+0.1,negative_y_lt_minus5mm,96,0,1,33.35564645,0
+0.1,positive_y_gt_5mm,96,0,1,33.38165534,0
+1,near_zero_abs_y_le_5mm,96,0,0.9791666667,36.19340517,0
+1,negative_y_lt_minus5mm,96,0,0.9270833333,33.00133883,0
+1,positive_y_gt_5mm,96,0,0.9479166667,33.01065733,0
+10,near_zero_abs_y_le_5mm,96,0,0.5,29.04056255,0
+10,negative_y_lt_minus5mm,96,0,0.5208333333,28.92067509,0
+10,positive_y_gt_5mm,96,0,0.5208333333,28.55046973,0.01041666667
