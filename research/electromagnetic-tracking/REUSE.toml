@@ -29,3 +29,15 @@ path = [
 ]
 SPDX-FileCopyrightText = "2026 Vladyslav Kononiuk"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+# Generated using OpenAI image-generation tools at the project owner's request.
+# The owner approves CC-BY-4.0 to the extent applicable rights exist and are
+# controlled by the owner; no copyright ownership is asserted by this metadata.
+[[annotations]]
+path = [
+  "physical-poc/references/kinestro_electromagnetic_tracking_lab_overview.png",
+  "physical-poc/references/kinestro_physical_poc_plan_infographic.png",
+  "physical-poc/references/electromagnetic_tracking_geometry_infographic.png",
+]
+SPDX-FileCopyrightText = "NOASSERTION"
+SPDX-License-Identifier = "CC-BY-4.0"

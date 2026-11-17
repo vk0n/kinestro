@@ -26,7 +26,7 @@ The proposed interaction combines broad arm-position control with fine wrist-ori
 
 ## Evidence and status
 
-This repository contains the technical foundation and an isolated, executable [M1/E1 numerical research study](research/electromagnetic-tracking/README.md). It contains no application code, firmware, drivers, trained recognition model, selected components, or Kinestro hardware measurements. Simulated findings do not validate wearable performance; E1 remains open pending bench measurements.
+This repository contains the technical foundation, an isolated executable [M1/E1 numerical research study](research/electromagnetic-tracking/README.md), and an [off-body physical POC research outline](research/electromagnetic-tracking/physical-poc/README.md). No production components or tracking architecture are approved. It contains no application code, firmware, drivers, trained recognition model, or Kinestro hardware measurements. Simulated findings and apparatus calculations do not validate wearable performance; E1 remains open pending bench measurements.
 
 | Classification | Current position |
 | --- | --- |
