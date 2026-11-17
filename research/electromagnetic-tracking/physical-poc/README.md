@@ -26,7 +26,7 @@ Use wound air-core coils, measured source currents and calibrated signed receive
 
 ## Concept-art audit
 
-The three owner-supplied images are AI-generated inspiration, not schematics, existing inventory or evidence. Unmodified copies are stored in [references/](references/) at the owner's request, so this document does not depend on a local Downloads directory. They are not automatically assigned the repository's documentation license: their reuse terms and copyright attribution are recorded as unknown, without asserting ownership or that AI output is copyrightable. See the [metadata marker](../../../LICENSES/LicenseRef-Unknown.txt); `reuse lint` flags this unresolved status.
+The three illustrations were generated using OpenAI image-generation tools at the project owner's request. The owner makes them available under [CC-BY-4.0](../../../LICENSES/CC-BY-4.0.txt) to the extent applicable rights are held by the owner. This designation does not assert that the illustrations necessarily qualify for copyright protection in every jurisdiction. They are conceptual visual references, not validated engineering drawings, existing inventory or evidence. Unmodified copies are stored in [references/](references/). See the [licensing policy](../../../LICENSE.md#external-materials-data-and-branding) for third-party and trademark boundaries.
 
 ### Supplied visual references — AI-generated, not validated engineering
 
