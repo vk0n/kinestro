@@ -29,3 +29,14 @@ path = [
 ]
 SPDX-FileCopyrightText = "2026 Vladyslav Kononiuk"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+# Owner-supplied AI concept art: inclusion requested, reuse terms not supplied.
+# Keep this separate from the project-authored documentation/artifact license.
+[[annotations]]
+path = [
+  "physical-poc/references/kinestro_electromagnetic_tracking_lab_overview.png",
+  "physical-poc/references/kinestro_physical_poc_plan_infographic.png",
+  "physical-poc/references/electromagnetic_tracking_geometry_infographic.png",
+]
+SPDX-FileCopyrightText = "NOASSERTION"
+SPDX-License-Identifier = "LicenseRef-Unknown"

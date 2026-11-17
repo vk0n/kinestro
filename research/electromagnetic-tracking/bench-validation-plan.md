@@ -7,6 +7,8 @@ SPDX-License-Identifier: CC-BY-4.0
 
 **Status: proposed; not performed.** This plan tests the numerical assumptions against laboratory evidence. It requires no human participants, wearable trial, purchases, or production component selection. It extends the existing [E1 baseline](../../docs/research-backlog.md#e1--off-body-electromagnetic-workspace-and-distortion-characterization); E1 remains open until physical measurements and model comparison are reviewed.
 
+The [physical POC research outline](physical-poc/README.md) adds the owner's visual references, a concept-art audit, corrected antipodal geometry and staged research questions. The illustrations do not establish apparatus availability or capability.
+
 ## Question and provisional configuration
 
 Can a characterized, practically sized transmitter and two independently oriented receivers yield useful position estimates over the declared waist/chest interaction envelopes, with approximately 5 cm accuracy, acceptable failures, and credible power/timing?
@@ -27,7 +29,7 @@ Sequential axis excitation is the first simple channel-separation experiment. St
 | Power meter and temperature measurement | Record driver input energy, coil current, driver/coil hot spots, ambient temperature, and warm-up behavior |
 | Characterized ferromagnetic and conductive samples; controllable electronics | Separate baseline, distortion, and interference conditions; record material and geometry rather than label all objects simply “metal” |
 
-Borrowed laboratory reference metrology is allowed; it is not a runtime infrastructure dependency. Independently establish metrology uncertainty and fixture repeatability. Proposed screening goals are expanded position uncertainty no more than 5 mm and angular uncertainty no more than 1°; these are **test-apparatus proposals**, not achieved specifications. A 5 mm position budget reserves 10% of the preliminary 5 cm target for reference uncertainty. If unavailable, report the actual uncertainty and whether the tracker error can be meaningfully separated from it.
+Use independently characterized laboratory reference metrology; it is not a runtime infrastructure dependency. Independently establish metrology uncertainty and fixture repeatability. Proposed screening goals are expanded position uncertainty no more than 5 mm and angular uncertainty no more than 1°; these are **test-apparatus proposals**, not achieved specifications. A 5 mm position budget reserves 10% of the preliminary 5 cm target for reference uncertainty. If unavailable, report the actual uncertainty and whether the tracker error can be meaningfully separated from it.
 
 ## Calibration and evaluation sequence
 

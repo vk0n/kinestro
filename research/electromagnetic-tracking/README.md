@@ -5,9 +5,11 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # M1/E1 electromagnetic tracking research
 
-**Numerical and literature research only. E1 remains open pending physical validation.** No hardware was built, measured, ordered, or selected; no human data was collected. This is an isolated research package, not Kinestro application software, firmware, a driver, or an approved tracking architecture.
+**Numerical/literature research and a proposed physical POC. E1 remains open pending physical validation.** No hardware was built, measured or ordered; no product components or architecture were approved and no human data was collected. This is an isolated research package, not Kinestro application software, firmware or a driver.
 
 Start with the [feasibility report](feasibility-report.md), [architecture comparison](architecture-comparison.md), [simulation results](simulation-results.md), [power analysis](power-feasibility.md), [proposed bench plan](bench-validation-plan.md), and [primary reference register](references.md).
+
+The [physical POC research outline](physical-poc/README.md) includes the owner's visual references, an independent engineering audit, corrected geometry and POC-1 through POC-4 research questions. Detailed validation requirements remain in the bench plan; E1 is open and no physical results are claimed.
 
 The [boundary/hemisphere extension](simulation-results.md#boundary-and-hemisphere-validation-boundary-v1) evaluates negative y, exact y=0, near-boundary positions and continuous crossings separately from the original positive-y baseline. A locally accurate or continuous estimate does not establish the absolute branch. E1 and the hardware architecture remain open.
 

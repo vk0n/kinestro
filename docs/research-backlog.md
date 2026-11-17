@@ -25,7 +25,7 @@ P0 questions are feasibility blockers for the desired interaction. Safety and da
 
 ## First three experiments
 
-The order below prioritizes the largest architecture risks. E2 can be planned while E1 runs; E3 should reuse E2's wrist/posture labels. Apparatus selection and any implementation belong to later explicit tasks. Start with available or borrowed laboratory equipment where appropriate without treating it as a production component decision.
+The order below prioritizes the largest architecture risks. E2 can be planned while E1 runs; E3 should reuse E2's wrist/posture labels. Apparatus selection and any implementation belong to later explicit tasks. Specify apparatus by the required measurement capabilities without treating it as a production component decision.
 
 ### E1 — Off-body electromagnetic workspace and distortion characterization
 
@@ -108,7 +108,7 @@ Planning and contract research may overlap, but hardware integration should not 
 - **Budgets:** Define tolerable latency, jitter, false actions, missed releases, complete-module mass/comfort, and the central module's mass/power envelope. Confirm how the aspirational 4–6-hour runtime applies to each module and workload.
 - **Mounting and interaction:** No waist/chest/distributed mount is selected. Approve trial variants, deactivation candidates, neutral/recenter behavior, and supported/raised-arm comfort tasks.
 - **Prototype safeguards:** Review inactive startup, manual host disable, release-on-loss, and explicit reactivation as proposed operating policy. These were added as engineering proposals, not claimed as decisions in the brief.
-- **Trials and resources:** Agree on available/borrowed apparatus, experiment budget, participant coverage, safety review responsibility, private recording storage, consent, and retention before collection. A solo pilot is assumed to be exploratory, not representative evidence.
+- **Trials and resources:** Agree on experiment resources, calibration, participant coverage, safety review responsibility, private recording storage, consent, and retention before collection. A solo pilot is assumed to be exploratory, not representative evidence.
 
 ## Initial technical references
 

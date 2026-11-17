@@ -39,6 +39,7 @@ For each future project-authored file, include the appropriate SPDX license iden
 
 - Third-party dependencies and contributed external materials retain their applicable licenses and attribution requirements. Review provenance and compatibility before inclusion; this overview does not relicense them.
 - Referenced papers, datasets, web pages, and other linked resources are not relicensed by Kinestro's documentation license. Official license texts in `LICENSES/` are reproduced unchanged under their own terms, not relicensed as project documentation.
+- The three owner-supplied AI concept-art PNGs in [the physical POC references](research/electromagnetic-tracking/physical-poc/README.md#supplied-visual-references--ai-generated-not-validated-engineering) are included as unmodified visual references. Their narrowly scoped `LicenseRef-Unknown` metadata records unresolved reuse terms and `NOASSERTION` copyright attribution; it does not grant a license or assign the documentation license to them.
 - Datasets and physiological/video recordings require separate licensing, privacy, consent, retention, and publication decisions before release. Neither the documentation policy nor the software/hardware policy assigns a default license to those data or supplies participant consent.
 - Copyright licensing of a file does not automatically license **Kinestro**, **Cyberdirigokinesis**, names, logos, or branding as trademarks, or imply endorsement. This statement creates no additional restriction on rights the approved licenses grant.
 
@@ -55,5 +56,7 @@ The complete, unmodified plain-text licenses are copied from the SPDX License Li
 License texts carry no added Kinestro headers. Per-file documentation headers make the current assignments explicit without a global override that could accidentally cover external material.
 
 At the owner's request, license texts were included ahead of software and hardware sources. MPL-2.0 now covers the E1 research code; CERN-OHL-W-2.0 still has no covered hardware source files. [REUSE Specification 3.3](https://reuse.software/spec-3.3/#license-files) disallows unused license texts; this deliberate remaining policy exception prevents claiming full REUSE compliance. Report `reuse lint` results honestly. Do not label documentation with unrelated licenses or create placeholder source files merely to silence an unused-license finding. Recheck when real hardware files are introduced. The original documentation-only context remains historical in ADR-0006.
+
+The supplied concept-art references add a separate unresolved item: `reuse lint` flags `LicenseRef-Unknown` because their reuse terms have not been established. Their metadata is present, but it does not resolve licensing or establish full REUSE compliance. Keep that uncertainty explicit rather than replacing it with an invented license grant.
 
 See [ADR-0006](docs/adr/0006-open-source-licensing.md) for the decision and its relationship to the historical licensing deferral.
